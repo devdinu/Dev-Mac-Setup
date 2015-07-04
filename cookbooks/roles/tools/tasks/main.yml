@@ -1,0 +1,25 @@
+---
+- name: install developer tools
+  apt: name=zsh state=latest force=yes
+
+- name: collect zsh facts 
+  shell: echo $SHELL
+  register: default_shell
+  changed_when: False
+  sudo: no
+
+- debug: var=default_shell
+
+- name: install oh-my-zsh
+  git: name=https://github.com/robbyrussell/oh-my-zsh.git dest=~/home/vagrant/.oh-my-zsh
+  register: install_op
+- debug: var=install_op
+
+- name: create template .zshrc at remote
+  template: src=~/Documents/Learn/Ansible/templates/zshrc_template dest=/home/vagrant/.zshrc
+  sudo: yes
+
+- name: set zsh as default shell
+  shell: chsh -s /bin/zsh
+  sudo: yes
+  when: default_shell.stdout.find('/bin/zsh') == -1
