@@ -8,15 +8,13 @@
   changed_when: False
   sudo: no
 
-- debug: var=default_shell
-
 - name: install oh-my-zsh
-  git: name=https://github.com/robbyrussell/oh-my-zsh.git dest=~/home/vagrant/.oh-my-zsh
+  git: name=https://github.com/robbyrussell/oh-my-zsh.git dest={{remote_home}}/.oh-my-zsh
   register: install_op
 - debug: var=install_op
 
 - name: create template .zshrc at remote
-  template: src=~/Documents/Learn/Ansible/templates/zshrc_template dest=/home/vagrant/.zshrc
+  template: src=~/Documents/Learn/Ansible/templates/zshrc_template dest={{remote_home}}/.zshrc
   sudo: yes
 
 - name: set zsh as default shell

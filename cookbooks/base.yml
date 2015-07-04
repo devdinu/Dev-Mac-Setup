@@ -4,6 +4,8 @@
   user: vagrant
   sudo: true
   roles:
-    # - core
+    - core
     - git
     - tools
+  vars_files:
+    - var/main.yml

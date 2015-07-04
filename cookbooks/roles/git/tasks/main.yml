@@ -3,5 +3,6 @@
   # apt: name=nginx state=latest
 - name: install git
   apt: name=git state=latest force=yes cache_valid_time=3600
-# - name: clone sample repo 
-#   git: name=git://github.com/dineshkumar-cse/Test.git dest=/vagrant/test-git accept_hostkey=yes
+
+- name: copy git configuration
+  template: src={{templates_path}}/.gitconfig dest={{remote_home}}/.gitconfig
