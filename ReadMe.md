@@ -6,12 +6,26 @@ Trying to setup necessary and useful tools via ansible mainly aimed for MAC. Als
 * Iterm
 * Git
 * ZSH
+ 
+## Points
 
-Points:
-    * Based on OS_FAMILY variable we can use specific package manager
-        - Code available under file /libexec/lib/python2.7/site-packages/ansible/module_utils/facts.py
+- Based on OS_FAMILY variable we can use specific package manager    
+- This information we can find it in facts.py code, located in `/libexec/lib/python2.7/site-packages/ansible/module_utils/facts.py`
 
-Resources:
+## Use Ansible Playbook For Vagrant Provisioning
+
+Add the following configuration to vagrant file for provisioning the vagrant box.
+```
+    config.vm.provision :ansible do |ansible|
+    ansible.playbook = "playbook_location/base.yml"
+    ansible.inventory_path = "ansible_host_file_location/ansible_hosts"
+    ansible.limit = "all"
+  end
+```
+- `vagrant up` or `vagrant provision` 'll do the job.
+
+
+## Resources:
 * [Unify package installation](http://serverfault.com/questions/587727/how-to-unify-package-installation-tasks-in-ansible)
 
 ```
