@@ -1,8 +1,14 @@
 ---
 # - name: install nginx
   # apt: name=nginx state=latest
-- name: install git
+- name: install git with apt-get
   apt: name=git state=latest force=yes cache_valid_time=3600
+  when: ansible_os_family == "Debian"
+
+- name: install git with homebrew
+  homebrew: name=git state=latest
+  when: ansible_os_family == "Darwin"
+
 
 - name: copy git configuration
   template: src={{templates_path}}/.gitconfig dest={{remote_home}}/.gitconfig

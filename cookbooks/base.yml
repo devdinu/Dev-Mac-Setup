@@ -1,11 +1,11 @@
 ---
 - name: setup server
-  hosts: vagrant
-  user: vagrant
+  hosts: all
   sudo: true
   roles:
     - core
-    - git
+    # - git
     - tools
+    - iterm
   vars_files:
     - var/main.yml

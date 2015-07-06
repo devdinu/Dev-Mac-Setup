@@ -1,3 +1,9 @@
+# Excluding variables setup
 var
+vars
+
+# swap files
 *.swp
+
+# config
 .gitconfig

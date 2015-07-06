@@ -1,0 +1,8 @@
+---
+  - include_vars: mac_setup_vars.yml
+  - include: install_iterm.yml
+  
+  - homebrew: name=lynx state=latest update_homebrew=yes
+    when: ansible_os_family == "Darwin"
+
+
