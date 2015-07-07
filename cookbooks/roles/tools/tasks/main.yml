@@ -18,16 +18,18 @@
   shell: echo $HOME
   register: default_home
   sudo: no
-- debug: var= default_home
+- debug: var=default_home
 
 - name: install oh-my-zsh
-  git: name=https://github.com/robbyrussell/oh-my-zsh.git dest={{remote_home}}/.oh-my-zsh
+  git: name=https://github.com/robbyrussell/oh-my-zsh.git dest={{default_home.stdout}}/.oh-my-zsh
   register: install_op
   when: default_shell.stdout.find('/bin/zsh') == -1
 - debug: var=install_op
 
+- debug: var=templates_path
+
 - name: create template .zshrc at remote
-  template: src=~/Documents/Learn/Ansible/templates/.zshrc dest={{default_home.stdout}}/.zshrc
+  template: src={{templates_path}}/.zshrc dest={{default_home.stdout}}/.zshrc
   sudo: yes
   when: default_shell.stdout.find('/bin/zsh') == -1
 
@@ -37,5 +39,5 @@
   when: default_shell.stdout.find('/bin/zsh') == -1
 
 - name: homebrew installations
-  homebrew: name=pip
+  homebrew: name=python3
   when: ansible_os_family == "Darwin"

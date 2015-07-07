@@ -1,6 +1,7 @@
 # Excluding variables setup
 var
 vars
+group_vars
 
 # swap files
 *.swp
