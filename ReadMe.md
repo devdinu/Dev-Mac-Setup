@@ -16,7 +16,7 @@ Trying to setup necessary and useful tools via ansible mainly aimed for MAC. Als
 
 Add the following configuration to vagrant file for provisioning the vagrant box.
 ```
-    config.vm.provision :ansible do |ansible|
+  config.vm.provision :ansible do |ansible|
     ansible.playbook = "playbook_location/base.yml"
     ansible.inventory_path = "ansible_host_file_location/ansible_hosts"
     ansible.limit = "all"
@@ -24,6 +24,11 @@ Add the following configuration to vagrant file for provisioning the vagrant box
 ```
 - `vagrant up` or `vagrant provision` 'll do the job.
 
+Run the playbook with required variables by setting it in one of the following way.
+
+- vars_files
+- roles/vars/main.yml
+- via commandline pass with -e parameter 
 
 ## Resources:
 * [Unify package installation](http://serverfault.com/questions/587727/how-to-unify-package-installation-tasks-in-ansible)
@@ -41,3 +46,7 @@ OS_FAMILY = dict(
     FreeBSD = 'FreeBSD', HPUX = 'HP-UX'
 )
 ```
+
+* [Ansible Variable Preferences](https://github.com/edx/configuration/wiki/Ansible-variable-conventions-and-overriding-defaults)
+
+* [Mac Yosemite Vagrant Box](https://github.com/AndrewDryga/vagrant-box-osx)
