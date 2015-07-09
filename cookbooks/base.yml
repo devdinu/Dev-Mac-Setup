@@ -1,11 +1,10 @@
 ---
 - name: setup server
   hosts: all
-  sudo: true
   roles:
     - core
     # - git
     - tools
     - iterm
-  vars_files:
-    - var/main.yml
+  # vars_files:
+  #   - var/main.yml

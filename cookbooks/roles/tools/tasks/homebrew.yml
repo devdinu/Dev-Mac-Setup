@@ -1,0 +1,4 @@
+---
+- name: homebrew installations
+  homebrew: name=python3
+  when: ansible_os_family == "Darwin"
