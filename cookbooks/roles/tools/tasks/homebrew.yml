@@ -1,4 +1,11 @@
 ---
+- shell: which python3
+  register: p3avail
+- debug: var=p3avail
+
 - name: homebrew installations
   homebrew: name=python3
+  when: ansible_os_family == "Darwin" and p3avail.stdout==""
+
+- homebrew: name=lynx state=latest update_homebrew=yes
   when: ansible_os_family == "Darwin"

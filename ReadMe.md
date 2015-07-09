@@ -6,6 +6,7 @@ Trying to setup necessary and useful tools via ansible mainly aimed for MAC. Als
 * Iterm
 * Git
 * ZSH
+* Emacs
  
 ## Points
 

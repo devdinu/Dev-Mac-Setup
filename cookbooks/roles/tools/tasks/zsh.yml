@@ -1,0 +1,28 @@
+---
+- name: collect zsh facts 
+  shell: echo $SHELL
+  register: default_shell
+  changed_when: False
+  sudo: no
+
+- name: collect zsh facts 
+  shell: echo $HOME
+  register: default_home
+  sudo: no
+
+- name: install oh-my-zsh
+  git: name=https://github.com/robbyrussell/oh-my-zsh.git dest="{{default_home.stdout}}/.oh-my-zsh"
+  register: install_op
+  when: default_shell.stdout.find('/bin/zsh') == -1
+- debug: var=install_op
+
+- name: create template .zshrc at remote
+  template: src="{{templates_path}}/.zshrc" dest="{{default_home.stdout}}/.zshrc"
+
+- name: set zsh as default shell
+# usermod -s /bin/zsh
+  shell: chsh -s /bin/zsh $USER
+  sudo: yes
+  when: default_shell.stdout.find('/bin/zsh') == -1
+  register: zsh_changed
+- debug: var=zsh_changed

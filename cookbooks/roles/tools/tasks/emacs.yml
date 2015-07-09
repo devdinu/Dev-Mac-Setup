@@ -1,0 +1,13 @@
+---
+- name: "Install Emacs Version 24.5.1"
+  get_url: url="http://emacsformacosx.com/emacs-builds/Emacs-24.5-1-universal.dmg" dest="{{download_location}}/emacs-24.dmg"
+  register: emacs_var
+  when: False
+
+- debug: var=emacs_var
+
+- name: "Download emacs customization plugins for clojure"
+  git: name="https://github.com/flyingmachine/emacs-for-clojure.git" dest="{{home_location.stdout}}/.emacs.d"
+
+- name: "Extract Emacs Application"
+  unarchive: src="{{download_location}}/emacs-24.dmg" dest="{{apps_location}}"
