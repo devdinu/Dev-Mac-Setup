@@ -1,4 +1,5 @@
 ---
-# - include: homebrew.yml
+- include: homebrew.yml
+- include: sublime.yml
 - include: zsh.yml
 - include: emacs.yml

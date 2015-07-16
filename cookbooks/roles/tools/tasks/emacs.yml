@@ -2,7 +2,7 @@
 - stat: path="{{applications_location}}/Emacs.app"
   register: emacs_app
 
-- name: "Install Emacs Version 24.5.1"
+- name: "Download Emacs Version 24.5.1"
   get_url: url="http://emacsformacosx.com/emacs-builds/Emacs-24.5-1-universal.dmg" dest="{{download_location}}/Emacs-24.5-1-universal.dmg"
   register: emacs_var
   when: emacs_app.stat.exists != True
