@@ -7,10 +7,6 @@
   register: git_location
 - debug: var=git_location
 
-- shell: echo $HOME
-  register: home_location
-- debug: var=home_location
-
 - name: install git with homebrew
   homebrew: name=git state=latest
   when: ansible_os_family == "Darwin" and git_location.stdout==""

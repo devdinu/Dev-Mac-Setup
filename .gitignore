@@ -12,3 +12,4 @@ group_vars
 # custom files
 *bkp*
 *hosts
+installables

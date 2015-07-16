@@ -1,0 +1,4 @@
+---
+- shell: echo $HOME
+  register: home_location
+- debug: var=home_location
