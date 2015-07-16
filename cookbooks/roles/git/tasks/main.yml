@@ -12,4 +12,4 @@
   when: ansible_os_family == "Darwin" and git_location.stdout==""
 
 - name: copy git configuration
-  template: src="{{templates_path}}/.gitconfig" dest="{{home_location.stdout}}/.gitconfig"
+  template: src="{{templates_path}}/.gitconfig" dest="~/.gitconfig"

@@ -1,23 +1,23 @@
 ---
+- stat: path="{{applications_location}}/Emacs.app"
+  register: emacs_app
+
 - name: "Install Emacs Version 24.5.1"
   get_url: url="http://emacsformacosx.com/emacs-builds/Emacs-24.5-1-universal.dmg" dest="{{download_location}}/Emacs-24.5-1-universal.dmg"
   register: emacs_var
-  when: False
-
-- debug: var=emacs_var
+  when: emacs_app.stat.exists != True
 
 - name: "Download emacs customization plugins for clojure"
-  git: name="https://github.com/flyingmachine/emacs-for-clojure.git" dest="{{home_location.stdout}}/.emacs.d"
-  when: False
-
-# - unarchive: src="{{installables_path}}/Emacs-24.5-1-universal.dmg" dest="{{apps_location}}"
+  git: name="https://github.com/flyingmachine/emacs-for-clojure.git" dest="~/.emacs.d"
+  when: emacs_app.stat.exists != True
 
 - shell: "{{ item }}"
   with_items:
   - hdiutil mount "{{download_location}}/Emacs-24.5-1-universal.dmg"
   - cp -R "/Volumes/Emacs/Emacs.app" "{{applications_location}}"
   - hdiutil unmount "/Volumes/Emacs/Emacs.app"
+  when: emacs_app.stat.exists != True
 
-- file: path="{{home_location.stdout}}/.lein" state=directory
+- file: path="~/.lein" state=directory
 
-- template: src="{{templates_path}}/profiles.clj" dest="{{home_location.stdout}}/.lein/profiles.clj"
+- template: src="{{templates_path}}/profiles.clj" dest="~/.lein/profiles.clj"
