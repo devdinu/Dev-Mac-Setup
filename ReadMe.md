@@ -7,7 +7,8 @@ Trying to setup necessary and useful tools via ansible mainly aimed for MAC. Als
 * Git
 * ZSH
 * Emacs
- 
+* Sublime Text
+
 ## Points
 
 - Based on OS_FAMILY variable we can use specific package manager    
