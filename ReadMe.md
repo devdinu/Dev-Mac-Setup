@@ -26,6 +26,16 @@ Add the following configuration to vagrant file for provisioning the vagrant box
 ```
 - `vagrant up` or `vagrant provision` 'll do the job.
 
+
+## Variables Required:
+  # Paths in local Ansible
+  - templates_path 
+  - installables_path 
+  # location in remote where installation happens
+  - download_location 
+  - apps_location
+  - applications_location
+
 Run the playbook with required variables by setting it in one of the following way.
 
 - vars_files

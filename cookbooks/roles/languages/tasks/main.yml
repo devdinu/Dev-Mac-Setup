@@ -1,0 +1,4 @@
+---
+- homebrew: name=leiningen,pyenv,python,pyenv-virtualenv,scala,rbenv,ruby-build
+
+- shell: rbenv install 2.2.2

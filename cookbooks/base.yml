@@ -6,5 +6,6 @@
     - git
     - tools
     - iterm
+    - languages
   vars_files:
     - vars/main.yml
