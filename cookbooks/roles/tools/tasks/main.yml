@@ -3,3 +3,4 @@
 - include: sublime.yml
 - include: zsh.yml
 - include: emacs.yml
+- include: vim.yml

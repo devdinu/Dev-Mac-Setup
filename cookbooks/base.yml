@@ -2,10 +2,10 @@
 - name: setup server
   hosts: all
   roles:
-    # - core
-    # - git
-    # - tools
-    # - iterm
+    - core
+    - git
+    - tools
+    - iterm
     - languages
     - database
   vars_files:
