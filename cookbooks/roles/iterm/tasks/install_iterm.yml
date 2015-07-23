@@ -1,8 +1,6 @@
 ---
 - name: "Download Iterm SetupFile from Server"
-  get_url: url="https://iterm2.com/downloads/beta/iTerm2-2_9_20150626.zip" dest="{{download_location}}/iterm"
-  register: download_info
-- debug: var=download_info
+  get_url: url="https://iterm2.com/downloads/beta/iTerm2-2_9_20150626.zip" dest="{{download_location}}/iterm.zip"
 
 - name: "Extract the file"
-  unarchive: src="{{download_location}}/iterm" dest="{{applications_location}}"
+  unarchive: src="{{download_location}}/iterm.zip" dest="{{applications_location}}" copy=no
