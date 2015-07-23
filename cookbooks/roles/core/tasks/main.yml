@@ -1,6 +1,7 @@
 ---
-
 - name: update apt
   apt: update_cache=yes
   when: ansible_os_family == "Debian"
-  
+
+- file: path="{{download_location}}" state=directory
+- file: path="{{applications_location}}" state=directory

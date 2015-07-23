@@ -5,4 +5,4 @@
 - debug: var=download_info
 
 - name: "Extract the file"
-  unarchive: src="{{download_location}}/iterm" dest="{{apps_location}}"
+  unarchive: src="{{download_location}}/iterm" dest="{{applications_location}}"
