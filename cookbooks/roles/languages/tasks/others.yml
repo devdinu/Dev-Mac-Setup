@@ -1,0 +1,9 @@
+---
+- shell: "brew reinstall openssl"
+
+- name: Installing Dependencies
+  homebrew: update_homebrew=yes name=readline,pyenv,pyenv-virtualenv,rbenv,ruby-build
+
+- homebrew: name=leiningen,scala,node
+- shell: "pyenv install 3.4.1"
+- shell: "rbenv install 2.2.2"

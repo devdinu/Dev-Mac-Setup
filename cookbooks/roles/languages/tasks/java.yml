@@ -1,0 +1,6 @@
+---
+- shell: which java
+  register: java_app
+
+- homebrew_cask: name=java
+  when: java_app.stdout==""

@@ -1,4 +1,3 @@
 ---
-- homebrew: update_homebrew=yes name=leiningen,pyenv,pyenv-virtualenv,rbenv,ruby-build
-- shell: "pyenv install 3.4.1"
-- shell: "rbenv install 2.2.2"
+- include: java.yml
+- include: others.yml
