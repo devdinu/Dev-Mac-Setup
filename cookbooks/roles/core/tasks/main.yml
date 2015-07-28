@@ -5,3 +5,15 @@
 
 - file: path="{{download_location}}" state=directory
 - file: path="{{applications_location}}" state=directory
+
+- shell: brew cask
+  register: cask_exists
+
+- homebrew: name="caskroom/cask/brew-cask"
+  when: "cask_exists.stdout.find('Unknown command: cask') != -1"
+
+- shell: brew --version
+  register: brew_exists
+
+- shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when: "brew_exists.stdout.find('brew: command not found')!=-1"

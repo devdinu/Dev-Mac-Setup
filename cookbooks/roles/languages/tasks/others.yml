@@ -9,8 +9,8 @@
 - name: Installing Programming Languages
   shell: "{{ item }}"
   with_items:
-  - rbenv install 2.2.2
-  - pyenv install 3.4.1 -f -v
-  - gem install rails
+  - rbenv install -s 2.2.2
+  - pyenv install -s 3.4.1 
   - rbenv rehash
   - pyenv rehash
+  sudo: yes
