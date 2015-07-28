@@ -1,2 +1,4 @@
 ---
 - homebrew: name=lynx state=latest update_homebrew=yes
+
+- homebrew_cask: name="google-chrome"

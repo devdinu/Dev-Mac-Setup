@@ -4,10 +4,6 @@
   register: default_shell
   changed_when: False
 
-# - name: collect zsh facts 
-#   shell: echo $HOME
-#   register: default_home
-
 - name: install oh-my-zsh
   git: name=https://github.com/robbyrussell/oh-my-zsh.git dest="~/.oh-my-zsh"
   when: default_shell.stdout.find('/bin/zsh') == -1

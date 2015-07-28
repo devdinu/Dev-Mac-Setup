@@ -5,7 +5,6 @@
 
 - shell : which git
   register: git_location
-- debug: var=git_location
 
 - name: install git with homebrew
   homebrew: name=git state=latest
