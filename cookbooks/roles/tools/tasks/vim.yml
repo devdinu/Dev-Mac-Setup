@@ -1,8 +1,7 @@
 ---
-- name:
-  shell: "{{item}}"
-  with_items:
-   - mkdir -p ~/.vim/autoload ~/.vim/bundle
-   - curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+- file: path="~/.vim/bundle" state=directory
+- file: path="~/.vim/autoload" state=directory
+
+- git: name="https://github.com/tpope/vim-pathogen.git" dest="~/.vim/autoload/pathogen.vim"
 
 - template: src="{{templates_path}}/.vimrc" dest="~/.vimrc"
