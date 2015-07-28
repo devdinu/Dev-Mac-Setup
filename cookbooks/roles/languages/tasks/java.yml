@@ -1,6 +1,7 @@
 ---
-- shell: which java
+- shell: java -version
   register: java_app
+- debug: java_app
 
 - homebrew_cask: name=java
-  when: java_app.stdout==""
+  when: "java_app.stdout!='No Java runtime present, requesting install.'"
