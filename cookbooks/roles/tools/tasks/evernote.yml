@@ -1,0 +1,9 @@
+---
+- name: "Downloading Evernote"
+  get_url: url="{{evernote_download_url}}" dest="{{download_location}}/evernote.dmg"
+
+- shell: "{{ item }}"
+  with_items:
+  - hdiutil attach "{{download_location}}/evernote.dmg"
+  - cp -R "/Volumes/Evernote/Evernote.app" "{{applications_location}}"
+  - hdiutil unmount "/Volumes/Evernote"

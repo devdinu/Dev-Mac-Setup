@@ -34,6 +34,7 @@ Add the following configuration to vagrant file for provisioning the vagrant box
   # location in remote where installation happens
   - download_location
   - applications_location
+  - evernote_download_url
 
 Run the playbook with required variables by setting it in one of the following way.
 
