@@ -1,4 +1,4 @@
 ---
 - homebrew: name=lynx,tree state=latest update_homebrew=yes
 
-- homebrew_cask: name="google-chrome"
+- homebrew_cask: name=virtualbox,vagrant,google-chrome

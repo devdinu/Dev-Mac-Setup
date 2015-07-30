@@ -11,7 +11,7 @@
   shell: "rm -rf ~/.emacs.d"
 
 - name: "Download emacs customization plugins for clojure"
-  git: name="https://github.com/dineshkumar-cse/emacs-for-clojure.git" dest="~/.emacs.d"
+  git: name="git@github.com:dineshkumar-cse/emacs-for-clojure.git" dest="~/.emacs.d"
   when: emacs_app.stat.exists != True
 
 - shell: "{{ item }}"
