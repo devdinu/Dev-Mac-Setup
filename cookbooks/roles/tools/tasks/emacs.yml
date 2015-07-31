@@ -12,7 +12,6 @@
 
 - name: "Download emacs customization plugins for clojure"
   git: name="git@github.com:dineshkumar-cse/emacs-for-clojure.git" dest="~/.emacs.d"
-  when: emacs_app.stat.exists != True
 
 - shell: "{{ item }}"
   with_items:
