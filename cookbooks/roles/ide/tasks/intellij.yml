@@ -1,0 +1,9 @@
+---
+- name: "Downloading Intellij ..."
+  get_url: url="{{intellij_url}}" dest="{{download_location}}/intellj.dmg"
+
+- shell: "{{ item }}"
+  with_items:
+  - hdiutil mount "{{download_location}}/intellij.dmg"
+  - cp -v -R /Volumes/IntelliJ*/IntelliJ*.app "{{applications_location}}"
+  - hdiutil unmount /Volumes/IntelliJ*
