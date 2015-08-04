@@ -9,6 +9,7 @@ group_vars
 # config
 .gitconfig
 .idea/
+*.iml
 # custom files
 *bkp*
 *hosts

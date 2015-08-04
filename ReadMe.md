@@ -1,6 +1,6 @@
 # Developer Machine Setup With Ansible
 
-Trying to setup necessary and useful tools via ansible mainly aimed for MAC. Also including Debian Distribution.
+Trying to setup necessary and useful tools via ansible mainly aimed for MAC.
 
 ## Setup
 * Iterm
@@ -8,6 +8,7 @@ Trying to setup necessary and useful tools via ansible mainly aimed for MAC. Als
 * ZSH
 * Emacs
 * Sublime Text
+* Intellij
 
 ## Points
 
@@ -35,6 +36,8 @@ Add the following configuration to vagrant file for provisioning the vagrant box
   - download_location
   - applications_location
   - evernote_download_url
+  - sublime_url
+  - intellij_url
 
 Run the playbook with required variables by setting it in one of the following way.
 
