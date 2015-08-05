@@ -1,2 +1,3 @@
 ---
-- include: intellij.yml
+# - include: intellij.yml
+- include: sublime.yml
