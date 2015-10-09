@@ -1,4 +1,4 @@
 ---
-- homebrew: name=lynx,tree,tig,gradle,pgcli,tmux,wget  state=latest update_homebrew=yes
+- homebrew: name=lynx,tree,tig,gradle,pgcli,tmux,wget,watch  state=latest update_homebrew=yes
 
 - homebrew_cask: name=virtualbox,vagrant,google-chrome
