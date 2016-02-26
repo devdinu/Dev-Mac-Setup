@@ -4,6 +4,6 @@
 
 - shell: "{{ item }}"
   with_items:
-  - hdiutil attach "{{download_location}}/evernote.dmg"
+  - echo "Y" | hdiutil attach "{{download_location}}/evernote.dmg"
   - cp -R "/Volumes/Evernote/Evernote.app" "{{applications_location}}"
   - hdiutil unmount "/Volumes/Evernote"
