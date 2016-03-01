@@ -1,2 +1,3 @@
 ---
-- git: name="git@bitbucket.org:dineshkumar-cse/my-configurations.git" dest="{{my_configs_path}}/" accept_hostkey=True
+- git: name="{{custom_config_repo}}" dest="{{my_configs_path}}/" accept_hostkey=True
+  when: sync_custom_config
