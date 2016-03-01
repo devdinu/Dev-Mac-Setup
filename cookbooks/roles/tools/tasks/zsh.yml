@@ -13,5 +13,4 @@
 
 - name: set zsh as default shell
   shell: chsh -s /bin/zsh {{ ansible_ssh_user }}
-  sudo: yes
   when: default_shell.stdout.find('/bin/zsh') == -1

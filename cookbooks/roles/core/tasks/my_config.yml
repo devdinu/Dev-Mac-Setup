@@ -1,2 +1,2 @@
 ---
-- git: name="git@bitbucket.org:dineshkumar-cse/my-configurations.git" dest="{{my_configs_path}}/"
+- git: name="git@bitbucket.org:dineshkumar-cse/my-configurations.git" dest="{{my_configs_path}}/" accept_hostkey=True
