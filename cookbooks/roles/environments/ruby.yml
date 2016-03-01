@@ -1,0 +1,7 @@
+---
+- name: "Installing ruby environment"
+  shell: "{{item}}"
+  with_items:
+    - curl -sSL https://get.rvm.io | bash -s stable
+
+

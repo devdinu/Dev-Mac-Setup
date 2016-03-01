@@ -4,6 +4,8 @@
   roles:
     - core
     - git
+    - ide
+    - environments
     - tools
     - iterm
     - languages
