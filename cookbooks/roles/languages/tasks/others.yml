@@ -5,12 +5,3 @@
   homebrew: update_homebrew=yes name=readline,pyenv,pyenv-virtualenv,rbenv,ruby-build
 
 - homebrew: name=leiningen,scala,node
-
-- name: Installing Programming Languages
-  shell: "{{ item }}"
-  with_items:
-  - rbenv install -s 2.2.2
-  - pyenv install -s 3.4.1 
-  - rbenv rehash
-  - pyenv rehash
-  sudo: yes

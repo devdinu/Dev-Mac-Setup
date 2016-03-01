@@ -2,5 +2,6 @@
 # - shell: java -version
 #   register: java_app
 
+# TODO: Still needs more testing! check whether it works!
 - homebrew_cask: name=java
   # when: "java_app.stderr=='No Java runtime present, requesting install.'"

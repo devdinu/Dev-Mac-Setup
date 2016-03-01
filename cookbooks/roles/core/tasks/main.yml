@@ -3,5 +3,5 @@
 - file: path="{{download_location}}" state=directory
 - file: path="{{applications_location}}" state=directory
 
-# - include: install_brew.yml
+- include: install_brew.yml
 - include: my_config.yml
