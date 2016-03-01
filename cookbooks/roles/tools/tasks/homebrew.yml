@@ -1,4 +1,9 @@
 ---
-- homebrew: name=lynx,tree,tig,gradle,pgcli,tmux,wget,watch  state=latest update_homebrew=yes
+
+- homebrew: name="{{brew_items}}" state=latest update_homebrew=yes
+
+- homebrew: name="{{optional_brew_items}}" state=latest update_homebrew=yes
+  when: install_optional_brew_items
 
 - homebrew_cask: name=virtualbox,vagrant,google-chrome
+  when: False

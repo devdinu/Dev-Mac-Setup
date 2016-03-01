@@ -1,0 +1,8 @@
+---
+  # Path is in local
+  templates_path: "$DEVSETUP_ANSIBLE_DIR/templates"
+  installables_path: "$DEVSETUP_ANSIBLE_DIR/installables"
+  # location in remote
+  download_location: "$DOWNLOAD_LOCATION/DownloadFiles"
+  applications_location: "/Applications"
+
