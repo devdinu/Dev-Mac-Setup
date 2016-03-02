@@ -2,12 +2,11 @@
   # Download Urls
   evernote_download_url: "https://evernote.com/download/get.php?file=EvernoteMac"
   sublime_packagecontrol_url: "https://packagecontrol.io/Package%20Control.sublime-package"
-  sublime2_url: "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2.dmg"
   sublime3_url: "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083.dmg"
 
   sublime_url: "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083.dmg"
   intellij_url: "https://d1opms6zj7jotq.cloudfront.net/idea/ideaIU-15.0.4-custom-jdk-bundled.dmg"
-  my_configs_path: "/Users/dineshkumar/Desktop/DownloadFiles/my-configs"
+  my_configs_path: "$MY_ZSH_CUSTOM_FOLDER/my-configs"
   brew_items: "lynx,tree,tig,gradle,pgcli,tmux,wget,watch,pyenv,pyenv-virtualenv"
 
   optional_brew_items: ag,htop,pgcli
