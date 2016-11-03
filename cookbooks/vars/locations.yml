@@ -1,8 +1,8 @@
 ---
   # Path is in local
-  templates_path: "$DEVSETUP_ANSIBLE_DIR/templates"
-  installables_path: "$DEVSETUP_ANSIBLE_DIR/installables"
+  templates_path: "{{ lookup('env','PWD') }}/templates"
+  installables_path: "{{ lookup('env','PWD') }}/installables"
   # location in remote
-  download_location: "$DOWNLOAD_LOCATION/DownloadFiles"
+  download_location: "{{ lookup('env','HOME') }}/Desktop/Files"
   applications_location: "/Applications"
 

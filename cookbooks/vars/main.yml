@@ -6,12 +6,20 @@
 
   sublime_url: "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083.dmg"
   intellij_url: "https://d1opms6zj7jotq.cloudfront.net/idea/ideaIU-15.0.4-custom-jdk-bundled.dmg"
-  my_configs_path: "$MY_ZSH_CUSTOM_FOLDER/my-configs"
-  brew_items: "lynx,tree,tig,gradle,pgcli,tmux,wget,watch,pyenv,pyenv-virtualenv"
+  my_configs_path: "{{ lookup('env','MY_ZSH_CUSTOM_FOLDER') }}/my-configs"
+  brew_items: "tig,tree,gradle,pgcli,tmux,wget,ag,nginx"
 
-  optional_brew_items: ag,htop,pgcli
+  optional_brew_items: "htop,pgcli,fpp,autoenv,lynx,watch,nginx"
   install_optional_brew_items: True
 
   # Your repository with configurations checkedin
   custom_config_repo: "<Your Custom Configurations checkedin repository url>"
   sync_custom_config: False
+
+  # Path is in local
+  templates_path: "{{ lookup('env','PWD') }}/templates"
+  installables_path: "{{ lookup('env','PWD') }}/installables"
+  # location in remote
+  download_location: "{{ lookup('env','HOME') }}/Desktop/Files"
+  applications_location: "/Applications"
+

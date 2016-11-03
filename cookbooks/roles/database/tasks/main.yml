@@ -1,2 +1,2 @@
 ---
-- homebrew: name=postgresql,mysql
+- homebrew: name=postgresql,mysql,mongo
