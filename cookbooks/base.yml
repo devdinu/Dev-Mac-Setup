@@ -6,9 +6,9 @@
     - git
     - ide
     - environments
+    - languages
     - tools
     - iterm
-    - languages
     - database
   vars_files:
     - vars/main.yml
